@@ -28,7 +28,7 @@ public class Main {
         frame.pack();
         // sets the location of the start of the frame to a null relative //
         frame.setLocationRelativeTo(null);
-        // this exits the program when the frame is closed //
+       		// this exits the program when the frame is closed //
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.setVisible(true);
