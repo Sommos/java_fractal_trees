@@ -40,24 +40,22 @@ public class Main {
         
 		update = new Thread(() ->  {
 			while(true) {
-                // set the color of window //
-                graphics.setColor(Color.BLACK);
-                // make the window, with dimensions of 1920x1080 pixels //
-                graphics.fillRect(0, 0, 1920, 1080);
-                // set the color of the graphics 'pencil' to cyan //
-                graphics.setColor(Color.CYAN);
-                
-                // get the graphics 'pencil' to draw with arguments for length and angle, using the middle of the frame (960 and 840) as the start of the recursive drawing //
-                drawStick(170, 0, 960, 840, 10, 30);
-                
-                // make the window and the 'pencil' drawings visible //
+                		// set the color of window //
+                		graphics.setColor(Color.BLACK);
+                		// make the window, with dimensions of 1920x1080 pixels //
+                		graphics.fillRect(0, 0, 1920, 1080);
+                		// set the color of the graphics 'pencil' to cyan //
+                		graphics.setColor(Color.CYAN);
+               			// get the graphics 'pencil' to draw with arguments for length and angle, using the middle of the frame (960 and 840) as the start of the recursive drawing //
+                		drawStick(170, 0, 960, 840, 10, 30);
+                		// make the window and the 'pencil' drawings visible //
 				bufferStrategy.show();
 			}
 		});
 		update.start();
 	}
     
-    // method that draws //
+    	// method that draws //
 	private void drawStick(int length, int angle, int x, int y, int lengthStep, int angleStep) {
 		int xSize = (int)(Math.cos(Math.toRadians(angle - 90)) * length);
 		int ySize = (int)(Math.sin(Math.toRadians(angle - 90)) * length);
