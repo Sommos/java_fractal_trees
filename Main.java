@@ -55,13 +55,14 @@ public class Main {
 		update.start();
 	}
     
-    	// method that draws //
+    	// recursive method that draws a single line //
 	private void drawStick(int length, int angle, int x, int y, int lengthStep, int angleStep) {
 		int xSize = (int)(Math.cos(Math.toRadians(angle - 90)) * length);
 		int ySize = (int)(Math.sin(Math.toRadians(angle - 90)) * length);
 		
 		graphics.drawLine(x, y, x + xSize, y + ySize);
 		
+		// exit condition of recursive loop requires length of a line to be below 1 //
 		if(length >= 1) {
 			drawStick(length - lengthStep, angle - angleStep, x + xSize, y + ySize, lengthStep, angleStep);
 			drawStick(length - lengthStep, angle + angleStep, x + xSize, y + ySize, lengthStep, angleStep);
