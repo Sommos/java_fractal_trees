@@ -18,10 +18,11 @@ public class Main {
 	}
 	
 	public Main() {
-        // make a new JFrame with the window title 'Recursive Tree' //
+        // make a new JFrame with the window title 'Recursive Tree', and assign to 'frame' variable //
         frame = new JFrame("Recursive Tree");
-        // make a new Canvas, and set it's size to 1920x1080 pixels //
+        // make a new Canvas, and assign to 'canvas' variable //
         canvas = new Canvas();
+	// set the canvas window size to 1920 x 1080 pixels //
         canvas.setSize(1920, 1080);
         // adds the canvas variable to the frame variable //
         frame.add(canvas);
@@ -30,14 +31,19 @@ public class Main {
         frame.setLocationRelativeTo(null);
        		// this exits the program when the frame is closed //
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		// sets the frame to visible
 		frame.setVisible(true);
+		// creates buffer strategy
 		canvas.createBufferStrategy(2);
+		// assigns buffer strategy to 'bufferStrategy' variable //
 		bufferStrategy = canvas.getBufferStrategy();
+		// sets graphics to 2D, and assigns to variable 'graphics' //
 		graphics = (Graphics2D) bufferStrategy.getDrawGraphics();
 		
+		// sets antialiasing to on //
 		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         
+		// instantiates new thread in variable 'update' //
 		update = new Thread(() ->  {
 			while(true) {
                 		// set the color of window //
