@@ -1,5 +1,9 @@
 # Java Fractal Trees
 
+<p align="center">
+    <img src="recursive_tree_0.png" width="300" />
+</p>
+
 A simple program that allows the user to draw beautiful fractal trees.
 
 # Contribution
