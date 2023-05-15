@@ -2,9 +2,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferStrategy;
-
 import javax.swing.JFrame;
 
 public class Main {
@@ -15,6 +13,7 @@ public class Main {
 	private BufferStrategy bufferStrategy;
 	private int window_width = 1920;
 	private int window_height = 1080;
+	private int lineLength;
 	
 	public static void main(String[] args) {
 		new Main();
@@ -31,10 +30,18 @@ public class Main {
                 graphics.fillRect(0, 0, window_width, window_height);
                 // set the color of the graphics 'pencil' to cyan //
                 graphics.setColor(Color.CYAN);
+				// increment line length by 5 pixels each time //
+				lineLength += 2;
                	// get the graphics 'pencil' to draw with arguments for length and angle, using the middle of the frame (960 and 840) as the start of the recursive drawing //
-                drawStick(175, 0, 960, 840, 10, 30);
+                drawStick(lineLength, 0, 960, 840, 10, 30);
                 // make the window and the 'pencil' drawings visible //
 				bufferStrategy.show();
+				try {
+					// wait for 50 milliseconds before drawing the tree again //
+					Thread.sleep(13);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		// start the thread //
@@ -59,8 +66,8 @@ public class Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// sets the frame to visible
 		frame.setVisible(true);
-		// creates buffer strategy
-		canvas.createBufferStrategy(2);
+		// creates buffer strategy, and uses quad buffering //
+		canvas.createBufferStrategy(4);
 		// assigns buffer strategy to 'bufferStrategy' variable //
 		bufferStrategy = canvas.getBufferStrategy();
 		// sets graphics to 2D, and assigns to variable 'graphics' //
@@ -71,15 +78,9 @@ public class Main {
     
     // recursive method that draws a single line //
 	private void drawStick(int lineLength, int lineAngle, int x, int y, int lengthStep, int lineAngleStep) {
-		// create a new AffineTransform, and rotate it by the lineAngle - 90 degrees //
-		AffineTransform transform = new AffineTransform();
-		transform.rotate(Math.toRadians(lineAngle - 90));
-		// create a new double array, and transform it by the AffineTransform //
-		double[] point = {lineLength, 0};
-		transform.transform(point, 0, point, 0, 1);
-		// assign the x and y values of the double array to variables //
-		int xSize = (int) point[0];
-		int ySize = (int) point[1];
+		// calculates the x and y size of the line //
+		int xSize = (int) (lineLength * Math.cos(Math.toRadians(lineAngle - 90)));
+    	int ySize = (int) (lineLength * Math.sin(Math.toRadians(lineAngle - 90)));
 		// set the color of the graphics 'pencil' to a random color //
 		graphics.setColor(new Color((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256)));
 		// draw a line from the start of the line to the end of the line //
