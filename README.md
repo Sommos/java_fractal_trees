@@ -2,7 +2,7 @@
 
 <p align="center">
     <img src="recursive_tree_0.png" width="550" />
-    <img src="recursive_tree_0.png" width="550" />
+    <img src="recursive_tree_1.png" width="550" />
 </p>
 
 A simple program that allows the user to draw beautiful fractal trees.
