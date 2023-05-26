@@ -1,8 +1,8 @@
 # Java Fractal Trees
 
 <p align="center">
-    <img src="recursive_tree_0.png" width="500" />
-    <img src="recursive_tree_1.png" width="500" />
+    <img src="recursive_tree_0.png" width="400" />
+    <img src="recursive_tree_1.png" width="400" />
 </p>
 
 A simple program that allows the user to draw beautiful fractal trees.
