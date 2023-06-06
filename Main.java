@@ -55,7 +55,7 @@ public class Main {
         	canvas = new Canvas();
 		// set the canvas window size to 1920 x 1080 pixels //
         	canvas.setSize(window_width, window_height);
-       	 	// adds the canvas variable to the frame variable //
+       	 	// adds, and then packs the canvas variable in to the frame variable //
         	frame.add(canvas);
         	frame.pack();
 		// sets the frame to not be resizable //
