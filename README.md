@@ -1,8 +1,8 @@
 # Java Fractal Trees
 
 <p align="center">
-    <img src="readme_image_0.png" width="450" />
-    <img src="readme_image_1.png" width="450" />
+    <img src="readme_image_0.png" width="400" />
+    <img src="readme_image_1.png" width="400" />
 </p>
 
 A simple program that allows the user to draw beautiful fractal trees.
