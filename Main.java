@@ -46,7 +46,7 @@ public class Main {
 		});
 		// start the thread //
 		update.start();
-	}
+			}
 
 	private void drawFrame() {
 		// make a new JFrame with the window title 'Recursive Tree', and assign to 'frame' variable //
