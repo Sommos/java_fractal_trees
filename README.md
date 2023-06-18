@@ -7,7 +7,7 @@
 
 A simple program that allows the user to draw beautiful fractal trees.
 
-Java version found at: https://github.com/Sommos/java_fractal_trees
+Python version found at: https://github.com/Sommos/python_fractal_trees
 
 Rust version found at: https://github.com/Sommos/rust_fractal_trees
 
